@@ -14,7 +14,7 @@ RSpec.describe Spree::OrderMailer do
     before do
       store.send(:clear_cache)
       ActionMailer::Base.delivery_method = :test
-      Spree::Config[:intercept_email] = ''
+      Spree::Backend::Config[:intercept_email] = ''
     end
 
     after { ActionMailer::Base.deliveries.clear }
@@ -33,7 +33,7 @@ RSpec.describe Spree::OrderMailer do
     end
 
     it 'adds the bcc email when provided' do
-      Spree::Config[:mail_bcc] = 'bcc-foo@foobar.com'
+      Spree::Backend::Config[:mail_bcc] = 'bcc-foo@foobar.com'
       deliver message
       expect(@email.bcc).to match_array ['bcc-foo@foobar.com']
     end
@@ -48,13 +48,13 @@ RSpec.describe Spree::OrderMailer do
       end
 
       it 'replaces the receipient with the specified address' do
-        Spree::Config[:intercept_email] = 'intercept@foobar.com'
+        Spree::Backend::Config[:intercept_email] = 'intercept@foobar.com'
         deliver message
         expect(@email.to).to match_array ['intercept@foobar.com']
       end
 
       it 'modifies the subject to include the original email' do
-        Spree::Config[:intercept_email] = 'intercept@foobar.com'
+        Spree::Backend::Config[:intercept_email] = 'intercept@foobar.com'
         deliver message
         expect(@email.subject.match(/customer@example\.com/)).to be_truthy
       end
@@ -62,7 +62,7 @@ RSpec.describe Spree::OrderMailer do
 
     context 'when intercept_mode is not provided' do
       it 'does not modify the recipient' do
-        Spree::Config[:intercept_email] = ''
+        Spree::Backend::Config[:intercept_email] = ''
         deliver message
         expect(@email.to).to match_array ['customer@example.com']
       end

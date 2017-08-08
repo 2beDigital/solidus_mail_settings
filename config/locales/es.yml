@@ -8,6 +8,9 @@ es:
         delivery_success: Prueba de envío de email satisfactoria
         error: ! 'Error en prueba de email: %{e}'
     mail_method_settings: Preferencias Métodos de email
+    admin:
+        tab:
+            mail_method_settings: Preferencias email  
     smtp: SMTP
     smtp_authentication_type: Tipo Autenticación SMTP
     smtp_domain: Dominio SMTP

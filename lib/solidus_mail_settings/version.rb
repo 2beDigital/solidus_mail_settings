@@ -1,4 +1,4 @@
-module SpreeMailSettings
+module SolidusMailSettings
   module_function
 
   # Returns the version of the currently loaded SpreeMailSettings as a

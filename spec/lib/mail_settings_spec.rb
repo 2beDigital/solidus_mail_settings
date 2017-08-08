@@ -1,7 +1,7 @@
 RSpec.describe Spree::Core::MailSettings do
   describe 'mail_server_settings' do
     subject { described_class.new.mail_server_settings }
-    let(:config) { Spree::Config }
+    let(:config) { Spree::Backend::Config }
 
     context 'authentication method is none' do
       before do

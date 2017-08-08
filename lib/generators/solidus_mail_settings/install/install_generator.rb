@@ -1,4 +1,4 @@
-module SpreeMailSettings
+module SolidusMailSettings
   module Generators
     class InstallGenerator < Rails::Generators::Base
     end

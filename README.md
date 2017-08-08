@@ -1,4 +1,4 @@
-# Spree Mail Settings
+# Solidus Mail Settings
 
 [![Build Status](https://travis-ci.org/spree-contrib/spree_mail_settings.svg?branch=master)](https://travis-ci.org/spree-contrib/spree_mail_settings)
 [![Code Climate](https://codeclimate.com/github/spree-contrib/spree_mail_settings/badges/gpa.svg)](https://codeclimate.com/github/spree-contrib/spree_mail_settings)
@@ -9,11 +9,8 @@
 
 1. Add this extension to your Gemfile with this line:
   ```ruby
-  gem 'spree_mail_settings', github: 'spree-contrib/spree_mail_settings', branch: 'X-X-stable'
+  gem 'solidus_mail_settings', github: '2bedigital/solidus_mail_settings', branch: 'master'
   ```
-
-  The `branch` option is important: it must match the version of Spree you're using.
-  For example, use `3-0-stable` if you're using Spree `3-0-stable` or any `3.0.x` version.
 
 2. Install the gem using Bundler:
   ```ruby

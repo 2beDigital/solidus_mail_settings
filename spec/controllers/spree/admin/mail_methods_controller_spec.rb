@@ -20,7 +20,7 @@ describe Spree::Admin::MailMethodsController, type: :controller do
 
     before do
       allow(controller).to receive(:try_spree_current_user).and_return(user)
-      Spree::Config[:enable_mail_delivery] = '1'
+      Spree::Backend::Config[:enable_mail_delivery] = '1'
     end
 
     def send_request

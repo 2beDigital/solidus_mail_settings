@@ -18,11 +18,11 @@ RSpec.feature 'Mail Methods' do
 
     # Regression test for #2094
     scenario 'clears password if username not provided' do
-      Spree::Config[:smtp_password] = 'haxme'
-      Spree::Config[:smtp_username] = 'haxme'
+      Spree::Backend::Config[:smtp_password] = 'haxme'
+      Spree::Backend::Config[:smtp_username] = 'haxme'
       click_button 'Update'
       expect(page).to have_content('successfully updated!')
-      expect(Spree::Config[:smtp_password]).to be_blank
+      expect(Spree::Backend::Config[:smtp_password]).to be_blank
     end
   end
 end

@@ -1,8 +1,8 @@
-module SpreeMailSettings
+module SolidusMailSettings
   class Engine < Rails::Engine
     require 'spree/core'
     isolate_namespace Spree
-    engine_name 'spree_mail_settings'
+    engine_name 'solidus_mail_settings'
 
     def self.activate
       Dir.glob(File.join(File.dirname(__FILE__), '../../app/**/*_decorator*.rb')) do |c|
@@ -10,7 +10,7 @@ module SpreeMailSettings
       end
     end
 
-    initializer 'spree_mail_settings' do
+    initializer 'solidus_mail_settings' do
       ActionMailer::Base.add_delivery_method :spree, Spree::Core::MailMethod
       Spree::Core::MailSettings.init
       Mail.register_interceptor(Spree::Core::MailInterceptor)

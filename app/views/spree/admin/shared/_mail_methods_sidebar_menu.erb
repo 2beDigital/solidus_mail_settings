@@ -1,0 +1,3 @@
+<% if can? :admin, Spree::Config %>
+  <%= tab :mail_method_settings, url: spree.edit_admin_mail_method_url %>
+<% end %>

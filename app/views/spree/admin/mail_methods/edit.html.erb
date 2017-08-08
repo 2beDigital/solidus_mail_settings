@@ -4,7 +4,7 @@
 
 <% content_for :page_actions do %>
   <%= link_to_with_icon 'envelope', Spree.t('mail_methods.send_testmail'), testmail_admin_mail_method_path,
-    method: :post, title: Spree.t('mail_methods.send_testmail'), class: 'send_mail btn btn-default' %>
+    method: :post, title: Spree.t('mail_methods.send_testmail'), class: 'send_mail button' %>
 <% end %>
 
 <%= form_tag admin_mail_method_path, method: :put do |f| %>

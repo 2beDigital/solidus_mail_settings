@@ -34,26 +34,26 @@ module Spree
 
       def user_credentials
         {
-          user_name: Config.smtp_username,
-          password: Config.smtp_password
+          user_name: Spree::Backend::Config.smtp_username,
+          password: Spree::Backend::Config.smtp_password
         }
       end
 
       def basic_settings
         {
-          address: Config.mail_host,
-          domain: Config.mail_domain,
-          port: Config.mail_port,
-          authentication: Config.mail_auth_type
+          address: Spree::Backend::Config.mail_host,
+          domain: Spree::Backend::Config.mail_domain,
+          port: Spree::Backend::Config.mail_port,
+          authentication: Spree::Backend::Config.mail_auth_type
         }
       end
 
       def need_authentication?
-        Config.mail_auth_type != 'None'
+        Spree::Backend::Config.mail_auth_type != 'None'
       end
 
       def secure_connection?
-        Config.secure_connection_type == 'TLS'
+        Spree::Backend::Config.secure_connection_type == 'TLS'
       end
     end
   end

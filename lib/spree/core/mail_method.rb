@@ -5,7 +5,7 @@ module Spree
       end
 
       def deliver!(mail)
-        mailer.deliver!(mail) if Config.enable_mail_delivery
+        mailer.deliver!(mail) if Spree::Backend::Config.enable_mail_delivery
       end
 
       def mailer
